@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Poppins:wght@500&display=swap');
+@import "tailwindcss";
+
+:root{
+  --bg-1: #0f172a; /* slate-900 */
+  --bg-2: #0b1220; /* deep */
+  --accent: #7c3aed; /* violet-600 */
+  --accent-2: #06b6d4; /* cyan-500 */
+  --muted: #94a3b8; /* slate-400 */
+}
+
+html,body,#root{
+  height:100%;
+}
+
+body {
+  @apply bg-gradient-to-b from-slate-900 via-slate-950 to-black text-slate-100;
+  font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Utility to keep content below the fixed navbar */
+.page-container{
+  padding-top: 5rem; /* matches navbar height */
+}
+
+.btn-primary{
+  background-image: linear-gradient(90deg,var(--accent),var(--accent-2));
+  background-size: 200% 200%;
+  display: inline-block;
+  border: none;
+  transition: background-position 0.4s ease, transform 0.15s ease;
+}
+.btn-primary:hover{ background-position: 100% 0%; transform: translateY(-2px)}
+
+
+.glass-card{
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Small responsive tweaks */
+@media (min-width:768px){
+  .hero-title{font-size:2.8rem}
+}
+
+/* Headings use a rounded display font for personality */
+h1,h2,h3,h4{
+  font-family: 'Fredoka', 'Poppins', ui-sans-serif, system-ui, -apple-system;
+}
+
+/* Make anchors scroll below the fixed navbar */
+section, [id] {
+  scroll-margin-top: 5rem;
+}
